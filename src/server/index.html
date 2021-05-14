@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Antiochia Presenter</title>
+
+    <style>
+      html, body {
+        /* width: 100%; */
+        /* height: 100%; */
+
+        margin: 0px;
+        padding: 0px;
+      }
+
+      html {
+        background-color: black;
+      }
+
+      body {
+        background-color: white;
+
+        position: fixed;
+        transition: filter 1s, height 1s, top 1s, bottom 1s, left 1s, right 1s;
+      }
+
+      body.invert {
+        filter: invert(100%);
+      }
+      img {
+        height:100%;
+	width:auto;
+      }
+
+      #outerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        font-family: 'Century Gothic';
+
+        white-space: pre;
+        text-align: center;
+
+        /* background-image: url('./jubi25_logo.png'); */
+        /* background-size: 10%; */
+        /* background-repeat: no-repeat; */
+        /* background-position: 99% 99%; */
+        /* background-position: bottom right; */
+      }
+
+      #innerContainer {
+        font-size: 40px;
+        background-size: 100% auto;
+      }
+
+      #talkContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        font-family: 'Century Gothic';
+
+        white-space: pre;
+        text-align: center;
+
+        
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
+
+      #talkTitle {
+        font-size: 8.5vw;
+        /* font-size: 5vw; */
+        font-weight: 800;
+      }
+
+      #talkName {
+        font-size: 5.5vw;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='outerContainer'>
+    <div id='message'></div>
+      <div id='innerContainer'></div>
+    </div>
+    <div style="display: none;" id='talkContainer'>
+      <div id='talkTitle'></div>
+      <div id='talkName'></div>
+      <audio id='tmAudio'></audio>
+    </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>

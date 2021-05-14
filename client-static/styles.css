@@ -1,0 +1,209 @@
+* {
+  background-color: black;
+  color: white;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0px;
+  padding: 0px;
+
+  user-select: none;
+}
+
+#songContainer {
+  width: 100%;
+  height: 100%;
+}
+
+#songContainer button {
+  width: 50%;
+  height: 20%;
+  font-size: 50px;
+}
+
+input {
+  width: 100%;
+  height: 10%;
+
+  font-size: 5vw;
+
+  text-align: center;
+}
+
+button:active {
+  background-color: gray;
+}
+
+#songTitleContainer {
+  height: 60%;
+
+  overflow: auto;
+}
+
+.songTitle {
+  width: 100%;
+
+  font-size: 5vw;
+
+  box-sizing: border-box;
+  border: 1px solid white;
+  padding: 7px;
+}
+
+.songTitle:active {
+  background-color: gray;
+}
+
+/* Talks */
+
+#talkContainer {
+  width: 100%;
+  height: 100%;
+}
+
+#talkContainer button {
+  width: 50%;
+  height: 20%;
+  font-size: 50px;
+
+  vertical-align: middle;
+}
+
+#talkContainer button.smallText {
+  width: 50%;
+  height: 20%;
+  font-size: 30px;
+}
+
+#talkTitleContainer {
+  height: 60%;
+
+  overflow: auto;
+}
+
+.talkTitle {
+  width: 100%;
+
+  font-size: 5vw;
+
+  box-sizing: border-box;
+  border: 1px solid white;
+  padding: 7px;
+}
+
+.talkTitle:active {
+  background-color: gray;
+}
+
+/* Settings */
+
+#settingsContainer {
+  width: 100%;
+  height: 100%;
+}
+
+#settingsContainer button {
+  width: 100%;
+  height: 20%;
+  font-size: 30px;
+}
+
+#marginControls {
+  display: flex;
+
+  height: 60%;
+
+  font-size: 10%;
+}
+
+#marginControls > button {
+  flex-grow: 1;
+
+  width: unset;
+  height: 100%;
+}
+
+#marginControls div {
+  flex-grow: 2;
+
+  height: 100%;
+}
+
+#marginControls div button {
+  height: 20%;
+}
+
+#settingsContainer div.filler {
+  width: 100%;
+  height: 10%;
+}
+
+/* State */
+
+#stateSelectorContainer {
+  width: 100%;
+  height: 10%;
+}
+
+#stateSelectorContainer button {
+  width: 28%;
+  height: 100%;
+  font-size: 30px;
+}
+
+#stateSelectorContainer button.small {
+  width: 16%;
+}
+/*Music*/
+#musicContainer {
+  width: 100%;
+  height: 100%;
+}
+
+#musicController {
+  width: 100%;
+  height: 25%;
+  vertical-align: middle;
+}
+#musicController button.middle {
+  width: 34%;
+  height: 50%;
+  font-size: 50px;
+
+  vertical-align: middle;
+}
+
+#musicController button {
+  width: 33%;
+  height: 50%;
+  font-size: 50px;
+
+  vertical-align: middle;
+}
+
+#musicController button.low {
+  width: 50%;
+  height: 50%;
+  font-size: 30px;
+}
+
+#musicTitleContainer {
+  height: 55%;
+  overflow: auto;
+}
+.musicTitle {
+  width: 100%;
+
+  font-size: 5vw;
+
+  box-sizing: border-box;
+  border: 1px solid white;
+  padding: 7px;
+}
+
+.musicTitle:active {
+  background-color: gray;
+}

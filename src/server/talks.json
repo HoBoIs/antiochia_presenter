@@ -1,0 +1,229 @@
+[{
+  "title": "Bemutatkozás",
+  "name": "Kincső & Márton",
+  "music": "kincso.mp3",
+  "thanks": {
+    "id": "2",
+    "names": ["Kincsőt",
+    "Mártont"]
+  },
+  "image": "-"
+},
+{
+  "title": "Isten hívása",
+  "name": "Betti",
+  "music": "betti.mp3",
+  "thanks": {
+    "id": 0,
+    "names": ["Bettiért"]
+  }
+},
+{
+  "title": "Elmélkedés az imáról",
+  "name": "Noncsi",
+  "music": "noncsi_vagott.mp3",
+  "thanks": {
+    "id": 1,
+    "names": ["Noncsit"]
+  }
+},
+{
+  "title": "Az élet mint önátadás",
+  "name": "Boró",
+  "music": "boro.mp3",
+  "thanks": {
+    "id": "0",
+    "names": ["Boróért"]
+  },
+  "image": "-"
+},
+{
+  "title": "Saját képem magamról,\nIsten képe rólam",
+  "name": "T.Kinga & Andris",
+  "music": "-",
+  "thanks": {
+    "id": 2,
+    "names": ["Kingát",
+    "Andrist"]
+  }
+},
+{
+  "title": "Krisztus műve",
+  "name": "Dalma",
+  "music": "dalma.mp3",
+  "thanks": {
+    "id": 1,
+    "names": ["Dalmát"]
+  }
+},
+{
+  "title": "Kereszténynek lenni",
+  "name": "Orsi & Balázs",
+  "music": "orsi.mp3",
+  "thanks": {
+    "id": 2,
+    "names": ["Orsit, Balázst"]
+  }
+},
+{
+  "title": "Keresztény közösség",
+  "name": "G.Zsófi",
+  "music": "-",
+  "thanks": {
+    "id": 0,
+    "names": ["Zsófit"]
+  }
+},
+{
+  "title": "Kiengesztelődés",
+  "name": "Levi",
+  "music": "-",
+  "thanks": {
+    "id": 0,
+    "names": ["Leviért"]
+  }
+},
+{
+  "title": "Elmélkedés az\n Eucharisztiáról",
+  "name": "Sári",
+  "music": "sari.mp3",
+  "thanks": {
+    "id": 1,
+    "names": ["Sárit"]
+  }
+},
+{
+  "title": "Egyház a világban",
+  "name": "N.Kinga & Gábor",
+  "music": "n_kinga.mp3",
+  "thanks": {
+    "id": 2,
+    "names": ["Kingát",
+    "Gábort"]
+  }
+},
+{
+  "title": "Küldetés",
+  "name": "Kincső & Márton",
+  "music": "kincso.mp3",
+  "thanks": {
+    "id": 2,
+    "names": ["Kincsőt",
+    "Mártont"]
+  }
+},
+{
+  "title": "Krisztus követése",
+  "name": "Panka & Zsombi",
+  "music": "zsombor.mp3",
+  "thanks": {
+    "id": 2,
+    "names": ["Pankát",
+    "Zsombit"]
+  }
+},
+{
+  "title": "Krisztusért dolgozni",
+  "name": "Kincső & Márton",
+  "music": "kincso.mp3",
+  "thanks": {
+    "id": 2,
+    "names": ["Kincsőt",
+    "Mártont"]
+  }
+},
+{
+  "title": "Logo",
+  "name": "",
+  "image": "polominta_light_aranyok.png",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Lovegun",
+  "name": "",
+  "image": "lovegun.jpg",
+  "music": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Zene",
+  "name": "(minta, kiengesztelőpéses zenékhez)",
+  "image": "Feher.png",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["-",
+    ""]
+  }
+},
+{
+  "title": "Igyatok sokat!",
+  "name": "(mármint vizet, mert a víz finom)",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "KISCSOPORT",
+  "name": "",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "ALVÓCSOPORT",
+  "name": "( Jó éjszakát! 🛏 )",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "REGGELI",
+  "name": "( Jó étvágyat! 🍴 )",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "EBÉD",
+  "name": "( Jó étvágyat! 🍴 )",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "VACSORA",
+  "name": "( Jó étvágyat! 🍴 )",
+  "music": "-",
+  "thanks": {
+    "id": 3,
+    "names": ["-"]
+  }
+},
+{
+  "title": "JÁTÉK",
+  "name": "-",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "-"
+}]

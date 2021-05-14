@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Antiochia Presenter Setup</title>
+  </head>
+  <body>
+    <div>
+            <p id="isconnected">no</p>
+            <p id="adresslabel">Ha ezt látod több mint 2 másodpercig valami nagyon nem stimmel</p>
+            <p id="adressqr">Próbáld újraindítani a programot</p>
+	    <button id="Refresh" onclick="sw.refreshdb()">Adatbázis újratöltése</button>
+    </div>
+    <button onclick="sw.importcall()">Dalok importálása</button>
+    <label>A songimport mappábol txt/xml</label>
+    <div>
+      <button onclick="sw.songordercall()">Zenerend aktualizálása</button>
+      <form id="songorderform">
+	<label>kezd:</label>
+        <input type="number" id="so_from">
+	<label>vég:</label>
+        <input type="number" id="so_to">
+      </form>
+      <p id="PsongorderList">
+      </p>
+      <p>
+      <button onclick="sw.newsongorder()">Új zenerend</button>
+      <br>
+      <textarea id=songorderIn></textarea> 
+      </p>
+    </div>
+    <br/>
+    <div id=errors></div>
+    <br/>
+    <button onclick="sw.makeplaces()">ok</button>
+    <label>Helyek beillesztése a világ sarkaiba</label>
+    <br/>
+    <textarea id=vilagsarkok></textarea> 
+    <br/>
+    <p id="talklist">XXX</p>
+  </body>
+
+  <script>
+    sw=require('./setup_window')
+    sw.init()
+  </script>
+  <style>
+    #PsongorderList{
+      height: 300px;
+      width: 300px;
+      overflow: scroll;
+      float: left;
+    }
+    #songorderIn{
+      height: 300px;
+      width: 400px;
+      overflow: scroll;
+    }
+    #errors{
+      color: red;
+    }
+  </style>
+</html>
+

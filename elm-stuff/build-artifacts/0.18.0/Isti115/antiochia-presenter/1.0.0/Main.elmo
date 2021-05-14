@@ -1,0 +1,987 @@
+var _Isti115$antiochia_presenter$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'WSData':
+				var _p1 = _p0._0;
+				return A2(_elm_lang$core$String$startsWith, 'SONGS:', _p1) ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							songTitles: A2(
+								_elm_lang$core$String$split,
+								';',
+								A2(_elm_lang$core$String$dropLeft, 6, _p1))
+						}),
+					{ctor: '[]'}) : (A2(_elm_lang$core$String$startsWith, 'TALKS:', _p1) ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							talks: A2(
+								_elm_lang$core$String$split,
+								';',
+								A2(_elm_lang$core$String$dropLeft, 6, _p1))
+						}),
+					{ctor: '[]'}) : (A2(_elm_lang$core$String$startsWith, 'MUSICS:', _p1) ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							musics: A2(
+								_elm_lang$core$String$split,
+								';',
+								A2(_elm_lang$core$String$dropLeft, 7, _p1))
+						}),
+					{ctor: '[]'}) : A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{ctor: '[]'})));
+			case 'Input':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{input: _p0._0}),
+					{ctor: '[]'});
+			case 'SendSong':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$websocket$WebSocket$send,
+							model.wsUrl,
+							A2(_elm_lang$core$Basics_ops['++'], 'SONG:', _p0._0)),
+						_1: {ctor: '[]'}
+					});
+			case 'Prev':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'PREV:'),
+						_1: {ctor: '[]'}
+					});
+			case 'Next':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'NEXT:'),
+						_1: {ctor: '[]'}
+					});
+			case 'SendTalk':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$websocket$WebSocket$send,
+							model.wsUrl,
+							A2(_elm_lang$core$Basics_ops['++'], 'TALK:', _p0._0)),
+						_1: {ctor: '[]'}
+					});
+			case 'Play':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'PLAY:'),
+						_1: {ctor: '[]'}
+					});
+			case 'Thanks':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'THANKS:'),
+						_1: {ctor: '[]'}
+					});
+			case 'Invert':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'INVERT:'),
+						_1: {ctor: '[]'}
+					});
+			case 'Margin':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$websocket$WebSocket$send,
+							model.wsUrl,
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'MARGIN:',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_p0._0,
+									A2(_elm_lang$core$Basics_ops['++'], '|', _p0._1)))),
+						_1: {ctor: '[]'}
+					});
+			case 'SendMusic':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$websocket$WebSocket$send,
+							model.wsUrl,
+							A2(_elm_lang$core$Basics_ops['++'], 'MUSIC:', _p0._0)),
+						_1: {ctor: '[]'}
+					});
+			case 'PlayMusic':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'PLAYMUSIC:'),
+						_1: {ctor: '[]'}
+					});
+			case 'PauseMusic':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'PAUSEMUSIC:'),
+						_1: {ctor: '[]'}
+					});
+			case 'StopMusic':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'STOPMUSIC:'),
+						_1: {ctor: '[]'}
+					});
+			case 'SoundDown':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'SOUNDDOWN:'),
+						_1: {ctor: '[]'}
+					});
+			case 'SoundUp':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: A2(_elm_lang$websocket$WebSocket$send, model.wsUrl, 'SOUNDUP:'),
+						_1: {ctor: '[]'}
+					});
+			default:
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{state: _p0._0, input: ''}),
+					{ctor: '[]'});
+		}
+	});
+var _Isti115$antiochia_presenter$Main$viewMessage = function (msg) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(msg),
+			_1: {ctor: '[]'}
+		});
+};
+var _Isti115$antiochia_presenter$Main$flatten = function (str) {
+	return A4(
+		_elm_lang$core$Regex$replace,
+		_elm_lang$core$Regex$All,
+		_elm_lang$core$Regex$regex('[úüű]'),
+		function (_p2) {
+			return 'u';
+		},
+		A4(
+			_elm_lang$core$Regex$replace,
+			_elm_lang$core$Regex$All,
+			_elm_lang$core$Regex$regex('[óöő]'),
+			function (_p3) {
+				return 'o';
+			},
+			A4(
+				_elm_lang$core$Regex$replace,
+				_elm_lang$core$Regex$All,
+				_elm_lang$core$Regex$regex('[í]'),
+				function (_p4) {
+					return 'i';
+				},
+				A4(
+					_elm_lang$core$Regex$replace,
+					_elm_lang$core$Regex$All,
+					_elm_lang$core$Regex$regex('[é]'),
+					function (_p5) {
+						return 'e';
+					},
+					A4(
+						_elm_lang$core$Regex$replace,
+						_elm_lang$core$Regex$All,
+						_elm_lang$core$Regex$regex('[á]'),
+						function (_p6) {
+							return 'a';
+						},
+						_elm_lang$core$String$toLower(str))))));
+};
+var _Isti115$antiochia_presenter$Main$Flags = function (a) {
+	return {wsUrl: a};
+};
+var _Isti115$antiochia_presenter$Main$Model = F6(
+	function (a, b, c, d, e, f) {
+		return {state: a, wsUrl: b, input: c, songTitles: d, talks: e, musics: f};
+	});
+var _Isti115$antiochia_presenter$Main$Musics = {ctor: 'Musics'};
+var _Isti115$antiochia_presenter$Main$Settings = {ctor: 'Settings'};
+var _Isti115$antiochia_presenter$Main$Talks = {ctor: 'Talks'};
+var _Isti115$antiochia_presenter$Main$Songs = {ctor: 'Songs'};
+var _Isti115$antiochia_presenter$Main$init = function (flags) {
+	return {
+		ctor: '_Tuple2',
+		_0: {
+			state: _Isti115$antiochia_presenter$Main$Songs,
+			wsUrl: flags.wsUrl,
+			input: '',
+			songTitles: {ctor: '[]'},
+			talks: {ctor: '[]'},
+			musics: {ctor: '[]'}
+		},
+		_1: _elm_lang$core$Platform_Cmd$none
+	};
+};
+var _Isti115$antiochia_presenter$Main$SoundUp = {ctor: 'SoundUp'};
+var _Isti115$antiochia_presenter$Main$SoundDown = {ctor: 'SoundDown'};
+var _Isti115$antiochia_presenter$Main$StopMusic = {ctor: 'StopMusic'};
+var _Isti115$antiochia_presenter$Main$PauseMusic = {ctor: 'PauseMusic'};
+var _Isti115$antiochia_presenter$Main$PlayMusic = {ctor: 'PlayMusic'};
+var _Isti115$antiochia_presenter$Main$SendMusic = function (a) {
+	return {ctor: 'SendMusic', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$SwitchState = function (a) {
+	return {ctor: 'SwitchState', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$stateSelector = A2(
+	_elm_lang$html$Html$div,
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$id('stateSelectorContainer'),
+		_1: {ctor: '[]'}
+	},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$button,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onClick(
+					_Isti115$antiochia_presenter$Main$SwitchState(_Isti115$antiochia_presenter$Main$Songs)),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Dalok'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$button,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onClick(
+						_Isti115$antiochia_presenter$Main$SwitchState(_Isti115$antiochia_presenter$Main$Talks)),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Bevezetők'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(
+							_Isti115$antiochia_presenter$Main$SwitchState(_Isti115$antiochia_presenter$Main$Musics)),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Zenék'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('small'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(
+									_Isti115$antiochia_presenter$Main$SwitchState(_Isti115$antiochia_presenter$Main$Settings)),
+								_1: {ctor: '[]'}
+							}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('⚙️'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _Isti115$antiochia_presenter$Main$Margin = F2(
+	function (a, b) {
+		return {ctor: 'Margin', _0: a, _1: b};
+	});
+var _Isti115$antiochia_presenter$Main$Invert = {ctor: 'Invert'};
+var _Isti115$antiochia_presenter$Main$Thanks = {ctor: 'Thanks'};
+var _Isti115$antiochia_presenter$Main$Play = {ctor: 'Play'};
+var _Isti115$antiochia_presenter$Main$SendTalk = function (a) {
+	return {ctor: 'SendTalk', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$Next = {ctor: 'Next'};
+var _Isti115$antiochia_presenter$Main$Prev = {ctor: 'Prev'};
+var _Isti115$antiochia_presenter$Main$SendSong = function (a) {
+	return {ctor: 'SendSong', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$Input = function (a) {
+	return {ctor: 'Input', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$view = function (model) {
+	var _p7 = model.state;
+	switch (_p7.ctor) {
+		case 'Songs':
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('songContainer'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$Prev),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('<'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$Next),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('>'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onInput(_Isti115$antiochia_presenter$Main$Input),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_Isti115$antiochia_presenter$Main$Input('')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$value(model.input),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$id('songTitleContainer'),
+										_1: {ctor: '[]'}
+									},
+									A2(
+										_elm_lang$core$List$map,
+										function (t) {
+											return A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('songTitle'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(
+															_Isti115$antiochia_presenter$Main$SendSong(t)),
+														_1: {ctor: '[]'}
+													}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(t),
+													_1: {ctor: '[]'}
+												});
+										},
+										A2(
+											_elm_lang$core$List$filter,
+											function (t) {
+												return A2(
+													_elm_lang$core$String$contains,
+													_Isti115$antiochia_presenter$Main$flatten(model.input),
+													_Isti115$antiochia_presenter$Main$flatten(t));
+											},
+											model.songTitles))),
+								_1: {
+									ctor: '::',
+									_0: _Isti115$antiochia_presenter$Main$stateSelector,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				});
+		case 'Talks':
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('talkContainer'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$Play),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Zene'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('smallText'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$Thanks),
+									_1: {ctor: '[]'}
+								}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Köszöntés'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onInput(_Isti115$antiochia_presenter$Main$Input),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_Isti115$antiochia_presenter$Main$Input('')),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$value(model.input),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$id('talkTitleContainer'),
+										_1: {ctor: '[]'}
+									},
+									A2(
+										_elm_lang$core$List$map,
+										function (t) {
+											return A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('talkTitle'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(
+															_Isti115$antiochia_presenter$Main$SendTalk(t)),
+														_1: {ctor: '[]'}
+													}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(t),
+													_1: {ctor: '[]'}
+												});
+										},
+										A2(
+											_elm_lang$core$List$filter,
+											function (t) {
+												return A2(
+													_elm_lang$core$String$contains,
+													_Isti115$antiochia_presenter$Main$flatten(model.input),
+													_Isti115$antiochia_presenter$Main$flatten(t));
+											},
+											model.talks))),
+								_1: {
+									ctor: '::',
+									_0: _Isti115$antiochia_presenter$Main$stateSelector,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				});
+		case 'Musics':
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('musicContainer'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id('musicController'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$button,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$PlayMusic),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('▶'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$PauseMusic),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('middle'),
+											_1: {ctor: '[]'}
+										}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('⏸'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$StopMusic),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('⏹'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$button,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$SoundDown),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('low'),
+													_1: {ctor: '[]'}
+												}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text('🔉'),
+												_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$button,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$SoundUp),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('low'),
+														_1: {ctor: '[]'}
+													}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('🔊'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$input,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onInput(_Isti115$antiochia_presenter$Main$Input),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(
+										_Isti115$antiochia_presenter$Main$Input('')),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$value(model.input),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$id('musicTitleContainer'),
+									_1: {ctor: '[]'}
+								},
+								A2(
+									_elm_lang$core$List$map,
+									function (t) {
+										return A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('musicTitle'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(
+														_Isti115$antiochia_presenter$Main$SendMusic(t)),
+													_1: {ctor: '[]'}
+												}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(t),
+												_1: {ctor: '[]'}
+											});
+									},
+									A2(
+										_elm_lang$core$List$filter,
+										function (t) {
+											return A2(
+												_elm_lang$core$String$contains,
+												_Isti115$antiochia_presenter$Main$flatten(model.input),
+												_Isti115$antiochia_presenter$Main$flatten(t));
+										},
+										model.musics))),
+							_1: {
+								ctor: '::',
+								_0: _Isti115$antiochia_presenter$Main$stateSelector,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				});
+		default:
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('settingsContainer'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_Isti115$antiochia_presenter$Main$Invert),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Invertálás'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$id('marginControls'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											A2(_Isti115$antiochia_presenter$Main$Margin, 'l', '-')),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('<'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												A2(_Isti115$antiochia_presenter$Main$Margin, 'l', '+')),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('>'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{ctor: '[]'},
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{ctor: '[]'},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$button,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Events$onClick(
+																	A2(_Isti115$antiochia_presenter$Main$Margin, 't', '-')),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('^'),
+																_1: {ctor: '[]'}
+															}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$button,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Events$onClick(
+																		A2(_Isti115$antiochia_presenter$Main$Margin, 't', '+')),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('v'),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$button,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Events$onClick(
+																			A2(_Isti115$antiochia_presenter$Main$Margin, 'x', '')),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text('x'),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(
+																				A2(_Isti115$antiochia_presenter$Main$Margin, 'b', '+')),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('^'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$button,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Events$onClick(
+																					A2(_Isti115$antiochia_presenter$Main$Margin, 'b', '-')),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('v'),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}),
+												_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$button,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(
+														A2(_Isti115$antiochia_presenter$Main$Margin, 'r', '+')),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('<'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$button,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(
+															A2(_Isti115$antiochia_presenter$Main$Margin, 'r', '-')),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('>'),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('filler'),
+									_1: {ctor: '[]'}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _Isti115$antiochia_presenter$Main$stateSelector,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				});
+	}
+};
+var _Isti115$antiochia_presenter$Main$WSData = function (a) {
+	return {ctor: 'WSData', _0: a};
+};
+var _Isti115$antiochia_presenter$Main$subscriptions = function (model) {
+	return A2(_elm_lang$websocket$WebSocket$listen, model.wsUrl, _Isti115$antiochia_presenter$Main$WSData);
+};
+var _Isti115$antiochia_presenter$Main$main = _elm_lang$html$Html$programWithFlags(
+	{init: _Isti115$antiochia_presenter$Main$init, view: _Isti115$antiochia_presenter$Main$view, update: _Isti115$antiochia_presenter$Main$update, subscriptions: _Isti115$antiochia_presenter$Main$subscriptions})(
+	A2(
+		_elm_lang$core$Json_Decode$andThen,
+		function (wsUrl) {
+			return _elm_lang$core$Json_Decode$succeed(
+				{wsUrl: wsUrl});
+		},
+		A2(_elm_lang$core$Json_Decode$field, 'wsUrl', _elm_lang$core$Json_Decode$string)));
